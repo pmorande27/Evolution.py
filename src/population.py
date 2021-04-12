@@ -5,11 +5,15 @@ class Population:
         for i in range(number_of_individuals):
             self.individuals.append(Individual())
     def next_generation(self):
-        for individual in self.individuals:
+        copy = self.individuals[:]
+        #for individual in self.individuals:
+            #print(individual.food)
+        
+        for individual in copy:
             if individual.death():
                 self.individuals.remove(individual)
         new_generation = self.individuals[:]
-        for individual in self.individuals:
+        for individual in new_generation:
             if individual.reproduction():
                 self.individuals.append(Individual())
     def get_number_of_individuals(self):
