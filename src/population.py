@@ -4,7 +4,7 @@ class Population:
         self.individuals = []
         for i in range(number_of_individuals):
             self.individuals.append(Individual())
-    def next_generation():
+    def next_generation(self):
         for individual in self.individuals:
             if individual.death():
                 self.individuals.remove(individual)
@@ -12,3 +12,5 @@ class Population:
         for individual in self.individuals:
             if individual.reproduction():
                 self.individuals.append(Individual())
+    def get_number_of_individuals(self):
+        return(len(self.individuals))
